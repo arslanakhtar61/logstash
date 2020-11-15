@@ -1,14 +1,15 @@
 name: buildx
 
 on:
-  schedule:
-    - cron: '0 10 * * *' # everyday at 10am
-  pull_request:
-    branches: master
-  push:
-    branches: master
-    tags:
-      - v*
+  workflow_dispatch:
+    schedule:
+      - cron: '0 10 * * *' # everyday at 10am
+    pull_request:
+      branches: master
+    push:
+      branches: master
+      tags:
+        - v*
 
 jobs:
   buildx:
